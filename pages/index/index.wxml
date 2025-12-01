@@ -1,0 +1,56 @@
+<view class="page">
+  <view class="hero card">
+    <view class="header-text">Job Filter</view>
+    <view class="subtext">选择标签查看匹配的岗位。点击岗位可查看详情和跳转链接。</view>
+    <view class="actions">
+      <button class="button-primary" bindtap="goProfile">个人中心 · 打卡与星星</button>
+      <button class="button-secondary" bindtap="resetFilters">重置筛选</button>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">已选标签</view>
+    <view class="selected-tags" wx:if="{{selectedTags.length}}">
+      <view class="tag selected" wx:for="{{selectedTags}}" wx:key="{{item}}">{{item}}</view>
+    </view>
+    <view class="placeholder" wx:else>未选择任何标签</view>
+  </view>
+
+  <view class="category-list">
+    <block wx:for="{{categories}}" wx:key="{{item.key}}">
+      <view class="card category">
+        <view class="flex-between" bindtap="toggleCategory" data-key="{{item.key}}">
+          <view class="category-name">{{item.name}}</view>
+          <view class="arrow">{{expanded[item.key] ? '收起' : '展开'}}</view>
+        </view>
+        <view class="tag-list" wx:if="{{expanded[item.key]}}">
+          <view
+            class="tag {{selectedTags.includes(tag) ? 'selected' : ''}}"
+            wx:for="{{item.tags}}"
+            wx:for-item="tag"
+            wx:key="tag"
+            bindtap="toggleTag"
+            data-tag="{{tag}}"
+          >
+            {{tag}}
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view class="card results">
+    <view class="section-title">匹配岗位</view>
+    <view wx:if="{{!hasSelection}}" class="placeholder">请选择标签查看岗位。</view>
+    <view wx:if="{{hasSelection && filteredJobs.length === 0}}" class="placeholder">暂无匹配岗位，试试减少筛选条件。</view>
+    <block wx:for="{{filteredJobs}}" wx:key="{{item.id}}">
+      <view class="job-card" bindtap="onJobTap" data-id="{{item.id}}">
+        <view class="job-title">{{item.title}}</view>
+        <view class="job-meta">发布日期: {{item.dateString}}</view>
+        <view class="tag-list">
+          <view class="tag" wx:for="{{item.tags}}" wx:for-item="tag" wx:key="tag">{{tag}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

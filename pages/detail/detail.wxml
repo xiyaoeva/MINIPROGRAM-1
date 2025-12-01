@@ -1,0 +1,14 @@
+<view class="page">
+  <view class="card" wx:if="{{job}}">
+    <view class="title">{{job.title}}</view>
+    <view class="meta">发布日期: {{job.dateString}}</view>
+    <view class="section-title">标签</view>
+    <view class="tag-list">
+      <view class="tag" wx:for="{{job.tags}}" wx:for-item="tag" wx:key="tag">{{tag}}</view>
+    </view>
+    <view class="section-title">岗位链接</view>
+    <view class="link" bindtap="openLink">点击跳转岗位</view>
+    <button class="button-secondary" bindtap="copyLink">复制链接</button>
+  </view>
+  <view class="placeholder" wx:else>暂无岗位信息</view>
+</view>
