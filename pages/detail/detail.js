@@ -1,14 +1,20 @@
+const { jobs } = require('../../data/jobs');
+
 Page({
   data: {
     job: null
   },
 
   onLoad(options) {
-    if (options.job) {
+    const { id } = options || {};
+    if (id) {
       try {
-        const job = JSON.parse(decodeURIComponent(options.job));
-        this.setData({ job });
-        wx.setNavigationBarTitle({ title: job.title });
+        const jobId = decodeURIComponent(id);
+        const job = jobs.find((item) => item.id === jobId);
+        if (job) {
+          this.setData({ job });
+          wx.setNavigationBarTitle({ title: job.title });
+        }
       } catch (error) {
         console.error('解析岗位信息失败', error);
       }

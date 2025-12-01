@@ -61,8 +61,7 @@ Page({
 
   onJobTap(event) {
     const { id } = event.currentTarget.dataset;
-    const job = jobs.find((item) => item.id === id);
-    if (!job) return;
-    wx.navigateTo({ url: `/pages/detail/detail?job=${encodeURIComponent(JSON.stringify(job))}` });
+    if (!jobs.find((item) => item.id === id)) return;
+    wx.navigateTo({ url: `/pages/detail/detail?id=${encodeURIComponent(id)}` });
   }
 });
