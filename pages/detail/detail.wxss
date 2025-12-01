@@ -1,0 +1,25 @@
+.page {
+  padding: 32rpx;
+}
+
+.title {
+  font-size: 40rpx;
+  font-weight: 700;
+}
+
+.meta {
+  color: #6b7280;
+  margin: 10rpx 0 20rpx;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20rpx;
+}
+
+.link {
+  color: #2563eb;
+  text-decoration: underline;
+  margin-bottom: 12rpx;
+}

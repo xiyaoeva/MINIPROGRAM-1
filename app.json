@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/webview/webview",
+    "pages/profile/profile"
+  ],
+  "window": {
+    "navigationBarTitleText": "Job Filter",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black"
+  }
+}
