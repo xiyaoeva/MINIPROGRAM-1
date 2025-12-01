@@ -1,0 +1,61 @@
+.page {
+  padding: 32rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.profile-card .title {
+  font-size: 40rpx;
+  font-weight: 700;
+  margin-bottom: 8rpx;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 26rpx;
+  margin-bottom: 16rpx;
+}
+
+.login-state {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.stats .stat-item {
+  margin-bottom: 12rpx;
+}
+
+.stats .label {
+  color: #6b7280;
+  font-size: 24rpx;
+}
+
+.stats .value {
+  font-size: 32rpx;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  gap: 16rpx;
+  margin-top: 12rpx;
+}
+
+.stars .star-item {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  padding: 16rpx 0;
+  border-bottom: 2rpx solid #f3f4f6;
+}
+
+.star-icon {
+  color: #f59e0b;
+  font-size: 36rpx;
+}
+
+.star-meta {
+  color: #1f2937;
+  font-size: 26rpx;
+}
