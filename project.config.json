@@ -1,0 +1,11 @@
+{
+  "description": "Job Filter Mini Program",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true
+  },
+  "compileType": "miniprogram",
+  "appid": "touristappid",
+  "projectname": "job-filter-miniprogram"
+}

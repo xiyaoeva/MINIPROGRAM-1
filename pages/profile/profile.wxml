@@ -1,0 +1,38 @@
+<view class="page">
+  <view class="card profile-card">
+    <view class="title">个人中心</view>
+    <view class="subtitle">登录后可打卡并记录积分与星星。</view>
+    <button class="button-primary" bindtap="login" wx:if="{{!loggedIn}}">微信登录</button>
+    <view class="login-state" wx:else>已登录 · code: {{loginCode || '已认证'}}</view>
+  </view>
+
+  <view class="card stats">
+    <view class="stat-item">
+      <view class="label">当前积分</view>
+      <view class="value">{{points}}</view>
+    </view>
+    <view class="stat-item">
+      <view class="label">连续打卡</view>
+      <view class="value">{{streak}} 天</view>
+    </view>
+    <view class="stat-item">
+      <view class="label">上次打卡</view>
+      <view class="value">{{lastCheckIn || '暂无'}}</view>
+    </view>
+    <view class="actions">
+      <button class="button-primary" bindtap="checkIn">今日打卡 (+10)</button>
+      <button class="button-secondary" bindtap="convertStar">兑换星星 (50积分)</button>
+    </view>
+  </view>
+
+  <view class="card stars">
+    <view class="section-title">已兑换星星</view>
+    <view wx:if="{{!stars.length}}" class="placeholder">暂无星星，兑换后记得截图保存。</view>
+    <block wx:for="{{stars}}" wx:key="{{item.id}}">
+      <view class="star-item">
+        <view class="star-icon">★</view>
+        <view class="star-meta">{{item.timestamp}}</view>
+      </view>
+    </block>
+  </view>
+</view>
