@@ -35,10 +35,9 @@ page {
 }
 
 .tag.selected {
-  background: linear-gradient(120deg, #1d4ed8, #0ea5e9);
+  background: linear-gradient(120deg, #2563eb, #38bdf8);
   color: #fff;
-  box-shadow: 0 10rpx 24rpx rgba(37, 99, 235, 0.3);
-  border: 2rpx solid rgba(37, 99, 235, 0.24);
+  box-shadow: 0 10rpx 20rpx rgba(37, 99, 235, 0.24);
 }
 
 .button-primary {

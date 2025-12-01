@@ -18,13 +18,8 @@
   margin-bottom: 20rpx;
 }
 
-.link-button {
-  margin-top: 8rpx;
-  background: linear-gradient(90deg, #2563eb, #3b82f6);
-  color: #ffffff;
-  border: none;
-  border-radius: 12rpx;
-  padding: 18rpx 24rpx;
-  font-weight: 600;
-  box-shadow: 0 6rpx 16rpx rgba(59, 130, 246, 0.25);
+.link {
+  color: #2563eb;
+  text-decoration: underline;
+  margin-bottom: 12rpx;
 }

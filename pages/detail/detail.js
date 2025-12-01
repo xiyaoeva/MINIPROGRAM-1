@@ -24,5 +24,10 @@ Page({
   openLink() {
     if (!this.data.job || !this.data.job.link) return;
     wx.navigateTo({ url: `/pages/webview/webview?src=${encodeURIComponent(this.data.job.link)}` });
+  },
+
+  copyLink() {
+    if (!this.data.job || !this.data.job.link) return;
+    wx.setClipboardData({ data: this.data.job.link });
   }
 });

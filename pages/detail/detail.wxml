@@ -6,8 +6,9 @@
     <view class="tag-list">
       <view class="tag" wx:for="{{job.tags}}" wx:for-item="tag" wx:key="tag">{{tag}}</view>
     </view>
-    <view class="section-title">查看链接</view>
-    <button class="link-button" bindtap="openLink">点击跳转</button>
+    <view class="section-title">前往文章</view>
+    <view class="link" bindtap="openLink"></view>
+    <button class="button-secondary" bindtap="copyLink">前往文章</button>
   </view>
-  <view class="placeholder" wx:else>暂无岗位信息</view>
+  <view class="placeholder" wx:else>暂无信息</view>
 </view>

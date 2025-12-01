@@ -11,13 +11,13 @@
   <view class="card">
     <view class="section-title">已选标签</view>
     <view class="selected-tags" wx:if="{{selectedTags.length}}">
-      <view class="tag selected" wx:for="{{selectedTags}}" wx:key="*this">{{item}}</view>
+      <view class="tag selected" wx:for="{{selectedTags}}" wx:key="{{item}}">{{item}}</view>
     </view>
     <view class="placeholder" wx:else>未选择任何标签</view>
   </view>
 
   <view class="category-list">
-    <block wx:for="{{categories}}" wx:key="key">
+    <block wx:for="{{categories}}" wx:key="{{item.key}}">
       <view class="card category">
         <view class="flex-between" bindtap="toggleCategory" data-key="{{item.key}}">
           <view class="category-name">{{item.name}}</view>
@@ -43,7 +43,7 @@
     <view class="section-title">匹配岗位</view>
     <view wx:if="{{!hasSelection}}" class="placeholder">请选择标签查看岗位。</view>
     <view wx:if="{{hasSelection && filteredJobs.length === 0}}" class="placeholder">暂无匹配岗位，试试减少筛选条件。</view>
-    <block wx:for="{{filteredJobs}}" wx:key="id">
+    <block wx:for="{{filteredJobs}}" wx:key="{{item.id}}">
       <view class="job-card" bindtap="onJobTap" data-id="{{item.id}}">
         <view class="job-title">{{item.title}}</view>
         <view class="job-meta">发布日期: {{item.dateString}}</view>
